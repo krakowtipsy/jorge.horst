@@ -4,786 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jorge Horst — SEO Consultant & AI Automation Specialist | Kraków, Poland</title>
-<meta name="description" content="Jorge Horst is an SEO Consultant & AI Automation Specialist based in Kraków, Poland. Strategic link-building, AI-powered analysis, multilingual SEO campaigns, and programmatic SEO strategies for sustainable organic growth.">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --bg: #050A08;
-  --bg-2: #0A120F;
-  --bg-3: #111D19;
-  --bg-4: #182923;
-  --text: #E2EDE7;
-  --text-dim: #7B9A8A;
-  --text-dimmer: #4A6B5A;
-  --accent: #00E87B;
-  --accent-2: #00CC6A;
-  --accent-dark: #00854A;
-  --accent-glow: rgba(0, 232, 123, 0.08);
-  --accent-glow-strong: rgba(0, 232, 123, 0.15);
-  --warm: #E8C547;
-  --border: rgba(123, 154, 138, 0.12);
-  --border-hover: rgba(0, 232, 123, 0.25);
-  --display: 'Syne', sans-serif;
-  --serif: 'Source Serif 4', Georgia, serif;
-  --mono: 'JetBrains Mono', monospace;
-  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-html {
-  scroll-behavior: smooth;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--serif);
-  font-size: 16px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-body { overflow-x: hidden; cursor: default; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
-
-/* ── Custom Cursor ── */
-.cursor-dot {
-  width: 8px; height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 99999;
-  transition: transform 0.1s var(--ease), opacity 0.3s;
-  mix-blend-mode: difference;
-}
-.cursor-ring {
-  width: 40px; height: 40px;
-  border: 1.5px solid var(--accent);
-  border-radius: 50%;
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 99998;
-  transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out), border-color 0.3s;
-  opacity: 0.5;
-}
-.cursor-ring.hovering {
-  width: 64px; height: 64px;
-  border-color: var(--warm);
-  opacity: 0.8;
-}
-
-/* ── Grain ── */
-body::after {
-  content: '';
-  position: fixed; inset: 0;
-  z-index: 99990; pointer-events: none;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ── NAV ── */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 9000;
-  padding: 1.25rem 3rem;
-  display: flex; align-items: center; justify-content: space-between;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  background: rgba(5, 10, 8, 0.75);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.4s var(--ease);
-}
-.nav.scrolled { padding: 0.85rem 3rem; }
-
-.nav-logo {
-  font-family: var(--display);
-  font-weight: 800; font-size: 1.35rem;
-  letter-spacing: -0.03em;
-  display: flex; align-items: center;
-}
-.nav-logo .dot {
-  display: inline-block; width: 8px; height: 8px;
-  background: var(--accent); border-radius: 50%;
-  margin-left: 2px;
-  animation: dotPulse 2.5s ease infinite;
-}
-@keyframes dotPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.6; }
-}
-
-.nav-links { display: flex; gap: 0.25rem; align-items: center; }
-.nav-link {
-  font-family: var(--display);
-  font-size: 0.8rem; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--text-dim);
-  padding: 0.5rem 1rem; border-radius: 100px;
-  transition: all 0.3s var(--ease);
-}
-.nav-link:hover { color: var(--text); background: var(--accent-glow); }
-.nav-link.active { color: var(--accent); }
-
-/* Dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown-menu {
-  display: none;
-  position: absolute; top: 100%; left: 0;
-  background: var(--bg-2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 0.5rem; min-width: 200px;
-  margin-top: 0.5rem;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
-}
-.nav-dropdown:hover .nav-dropdown-menu { display: block; }
-.nav-dropdown-menu a {
-  display: block;
-  padding: 0.65rem 1rem;
-  font-family: var(--display);
-  font-size: 0.8rem; font-weight: 600;
-  color: var(--text-dim);
-  border-radius: 8px;
-  transition: all 0.2s;
-}
-.nav-dropdown-menu a:hover {
-  background: var(--accent-glow);
-  color: var(--accent);
-}
-
-.nav-cta-wrap { display: flex; align-items: center; gap: 1rem; }
-.nav-status {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-family: var(--mono); font-size: 0.7rem;
-  color: var(--accent); letter-spacing: 0.02em;
-}
-.nav-status .pulse {
-  width: 6px; height: 6px;
-  background: var(--accent); border-radius: 50%;
-  box-shadow: 0 0 8px var(--accent);
-  animation: dotPulse 2s ease infinite;
-}
-.nav-cta {
-  font-family: var(--display);
-  font-size: 0.8rem; font-weight: 700;
-  padding: 0.6rem 1.5rem;
-  background: var(--accent); color: var(--bg);
-  border-radius: 100px; letter-spacing: 0.02em;
-  transition: all 0.3s var(--ease);
-}
-.nav-cta:hover {
-  background: #1affa0;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 24px rgba(0, 232, 123, 0.35);
-}
-
-.mobile-toggle { display: none; padding: 6px; }
-.mobile-toggle span {
-  display: block; width: 22px; height: 2px;
-  background: var(--text); border-radius: 2px;
-  margin: 5px 0; transition: 0.3s;
-}
-
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding: 8rem 3rem 5rem;
-  position: relative; overflow: hidden;
-}
-.hero-bg-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 100%);
-  opacity: 0.4;
-}
-.hero-glow {
-  position: absolute; top: -20%; right: -10%;
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(0, 232, 123, 0.04) 0%, transparent 65%);
-  pointer-events: none;
-}
-.hero-glow-2 {
-  position: absolute; bottom: -30%; left: -15%;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(232, 197, 71, 0.02) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero-inner {
-  max-width: 1280px; margin: 0 auto; width: 100%;
-  position: relative; z-index: 2;
-  display: grid; grid-template-columns: 7fr 5fr;
-  gap: 4rem; align-items: center;
-}
-
-.hero-subtitle {
-  font-family: var(--mono);
-  font-size: 0.75rem; letter-spacing: 0.08em;
-  color: var(--accent); margin-bottom: 1.25rem;
-  display: flex; align-items: center; gap: 0.75rem;
-  opacity: 0; animation: slideUp 0.8s var(--ease-out) 0.3s forwards;
-}
-.hero-subtitle::before { content: '//'; opacity: 0.4; }
-
-.hero h1 {
-  font-family: var(--display);
-  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-  font-weight: 800; line-height: 1.08;
-  letter-spacing: -0.04em; margin-bottom: 1.75rem;
-  opacity: 0; animation: slideUp 0.8s var(--ease-out) 0.45s forwards;
-}
-.hero h1 em {
-  font-style: normal;
-  background: linear-gradient(135deg, var(--accent), var(--warm));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-text {
-  font-size: 1.1rem; color: var(--text-dim);
-  line-height: 1.75; max-width: 560px; margin-bottom: 2rem;
-  opacity: 0; animation: slideUp 0.8s var(--ease-out) 0.6s forwards;
-}
-.hero-text strong { color: var(--text); font-weight: 600; }
-
-.hero-ctas {
-  display: flex; gap: 1rem; flex-wrap: wrap;
-  opacity: 0; animation: slideUp 0.8s var(--ease-out) 0.75s forwards;
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--display); font-weight: 700; font-size: 0.9rem;
-  padding: 0.9rem 2rem; border-radius: 100px;
-  transition: all 0.35s var(--ease);
-}
-.btn-fill { background: var(--accent); color: var(--bg); }
-.btn-fill:hover {
-  background: #1affa0; transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 232, 123, 0.3);
-}
-.btn-outline { border: 1px solid var(--border); color: var(--text); }
-.btn-outline:hover {
-  border-color: var(--accent); color: var(--accent);
-  background: var(--accent-glow);
-}
-
-/* Hero right — photo card */
-.hero-photo-card {
-  position: relative;
-  opacity: 0; animation: slideUp 0.8s var(--ease-out) 0.6s forwards;
-}
-.hero-photo {
-  width: 100%; aspect-ratio: 4 / 5;
-  border-radius: 24px;
-  background: var(--bg-3); border: 1px solid var(--border);
-  overflow: hidden; position: relative;
-  transition: border-color 0.4s;
-}
-.hero-photo:hover { border-color: var(--border-hover); }
-.hero-photo-placeholder {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 0.75rem; color: var(--text-dimmer);
-  font-family: var(--mono); font-size: 0.75rem;
-}
-.hero-photo-floating {
-  position: absolute; bottom: -12px; left: -12px;
-  background: var(--bg-2); border: 1px solid var(--border);
-  border-radius: 16px; padding: 1.25rem 1.5rem;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-.hero-photo-floating .name {
-  font-family: var(--display); font-weight: 800;
-  font-size: 1rem; margin-bottom: 0.15rem;
-}
-.hero-photo-floating .role {
-  font-family: var(--mono); font-size: 0.7rem;
-  color: var(--accent); letter-spacing: 0.04em;
-}
-
-/* ── LOGO STRIP ── */
-.logos-strip {
-  padding: 3rem 3rem;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-2);
-}
-.logos-inner {
-  max-width: 1280px; margin: 0 auto;
-}
-.logos-label {
-  font-family: var(--mono); font-size: 0.7rem;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-dimmer); text-align: center;
-  margin-bottom: 2rem;
-}
-.logos-row {
-  display: flex; align-items: center;
-  justify-content: center; gap: 3rem;
-  flex-wrap: wrap;
-}
-.logo-item {
-  font-family: var(--display); font-weight: 700;
-  font-size: 1.1rem; color: var(--text-dimmer);
-  letter-spacing: -0.01em;
-  transition: color 0.3s var(--ease);
-  opacity: 0.5;
-}
-.logo-item:hover { color: var(--text-dim); opacity: 0.8; }
-
-/* ── SECTIONS ── */
-.section { padding: 7rem 3rem; position: relative; }
-.section-inner { max-width: 1280px; margin: 0 auto; }
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
-  max-width: 1280px; margin: 0 auto;
-}
-.section-header { margin-bottom: 4rem; }
-.section-eyebrow {
-  font-family: var(--mono); font-size: 0.72rem;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 1rem;
-  display: flex; align-items: center; gap: 0.75rem;
-}
-.section-eyebrow::before {
-  content: ''; width: 24px; height: 1px; background: var(--accent);
-}
-.section-title {
-  font-family: var(--display);
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
-}
-.section-title em {
-  font-style: italic; font-family: var(--serif); font-weight: 600;
-}
-.section-subtitle {
-  font-size: 1.05rem; color: var(--text-dim);
-  line-height: 1.7; margin-top: 1rem; max-width: 640px;
-}
-
-/* ── INTRO / STORY ── */
-.story-layout {
-  display: grid; grid-template-columns: 7fr 5fr;
-  gap: 4rem; align-items: center;
-}
-.story-text p {
-  color: var(--text-dim); font-size: 1.05rem;
-  line-height: 1.8; margin-bottom: 1rem;
-}
-.story-text p strong { color: var(--text); font-weight: 600; }
-.story-text .read-more {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--display); font-weight: 700;
-  font-size: 0.85rem; color: var(--accent);
-  margin-top: 0.5rem; transition: gap 0.3s var(--ease);
-}
-.story-text .read-more:hover { gap: 0.85rem; }
-
-.story-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border); border-radius: 20px;
-  overflow: hidden;
-}
-.story-stat {
-  background: var(--bg-2); padding: 2rem;
-  transition: background 0.3s;
-}
-.story-stat:hover { background: var(--bg-3); }
-.story-stat-num {
-  font-family: var(--display); font-weight: 800;
-  font-size: 2.5rem; color: var(--accent); line-height: 1.1;
-}
-.story-stat-label {
-  font-family: var(--mono); font-size: 0.68rem;
-  text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--text-dim); margin-top: 0.25rem;
-}
-
-/* ── SERVICES ── */
-.services-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem;
-}
-.service-card {
-  background: var(--bg-2); border: 1px solid var(--border);
-  border-radius: 20px; padding: 2.5rem;
-  transition: all 0.4s var(--ease);
-  position: relative; overflow: hidden;
-  display: flex; flex-direction: column;
-}
-.service-card::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--accent-glow-strong), transparent 60%);
-  opacity: 0; transition: opacity 0.4s; pointer-events: none;
-}
-.service-card:hover::after { opacity: 1; }
-.service-card:hover {
-  border-color: var(--border-hover); transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
-}
-.service-icon-wrap {
-  width: 52px; height: 52px; border-radius: 14px;
-  background: var(--accent-glow);
-  border: 1px solid rgba(0, 232, 123, 0.1);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; margin-bottom: 1.5rem;
-  transition: all 0.3s var(--ease-bounce);
-}
-.service-card:hover .service-icon-wrap {
-  transform: scale(1.1) rotate(-3deg);
-  background: var(--accent-glow-strong);
-}
-.service-card h3 {
-  font-family: var(--display); font-size: 1.25rem;
-  font-weight: 700; margin-bottom: 0.75rem;
-}
-.service-card p {
-  color: var(--text-dim); font-size: 0.925rem;
-  line-height: 1.65; flex: 1;
-}
-.service-card .service-link {
-  font-family: var(--display); font-weight: 700;
-  font-size: 0.82rem; color: var(--accent);
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  margin-top: 1.25rem; transition: gap 0.3s;
-}
-.service-card:hover .service-link { gap: 0.7rem; }
-
-/* ── FRAMEWORK ── */
-.framework-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-  counter-reset: stage;
-}
-.framework-step {
-  background: var(--bg-2); border: 1px solid var(--border);
-  border-radius: 20px; padding: 2rem 1.75rem;
-  counter-increment: stage;
-  position: relative; overflow: hidden;
-  transition: all 0.4s var(--ease);
-}
-.framework-step:hover {
-  border-color: var(--border-hover); transform: translateY(-4px);
-}
-.framework-step-num {
-  font-family: var(--display); font-weight: 800;
-  font-size: 3.5rem; line-height: 1;
-  color: var(--accent); opacity: 0.12;
-  margin-bottom: 1rem;
-}
-.framework-step-label {
-  font-family: var(--mono); font-size: 0.65rem;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--accent); margin-bottom: 0.5rem;
-}
-.framework-step h4 {
-  font-family: var(--display); font-size: 1.05rem;
-  font-weight: 700; margin-bottom: 0.6rem;
-}
-.framework-step p {
-  color: var(--text-dim); font-size: 0.88rem; line-height: 1.65;
-}
-
-/* ── CTA BANNER ── */
-.cta-banner {
-  background: var(--bg-3); border: 1px solid var(--border);
-  border-radius: 24px; padding: 3.5rem;
-  display: flex; align-items: center;
-  justify-content: space-between; gap: 2rem;
-  transition: border-color 0.3s;
-}
-.cta-banner:hover { border-color: var(--border-hover); }
-.cta-banner h3 {
-  font-family: var(--display); font-size: 1.6rem;
-  font-weight: 800; letter-spacing: -0.02em;
-}
-.cta-banner p {
-  color: var(--text-dim); font-size: 0.95rem;
-  margin-top: 0.5rem; line-height: 1.6;
-}
-
-/* ── TESTIMONIALS ── */
-.testimonials-section { background: var(--bg-2); }
-.testimonials-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-}
-.testimonial-card {
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: 20px; padding: 2.5rem;
-  transition: all 0.4s var(--ease);
-}
-.testimonial-card:hover {
-  border-color: var(--border-hover); transform: translateY(-3px);
-}
-.testimonial-quote {
-  font-family: var(--serif); font-size: 1.05rem;
-  font-style: italic; line-height: 1.75;
-  color: var(--text); margin-bottom: 1.5rem;
-  position: relative; padding-left: 1.25rem;
-  border-left: 2px solid var(--accent-dark);
-}
-.testimonial-author {
-  display: flex; align-items: center; gap: 0.75rem;
-}
-.testimonial-avatar {
-  width: 42px; height: 42px; border-radius: 50%;
-  background: var(--bg-3); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--display); font-size: 0.8rem;
-  font-weight: 700; color: var(--accent);
-}
-.testimonial-name {
-  font-family: var(--display); font-weight: 700; font-size: 0.9rem;
-}
-.testimonial-role {
-  font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim);
-}
-
-/* ── FAQ ── */
-.faq-list { max-width: 800px; }
-.faq-item {
-  border: 1px solid var(--border); border-radius: 14px;
-  margin-bottom: 0.75rem; overflow: hidden;
-  transition: border-color 0.3s;
-}
-.faq-item:hover { border-color: var(--border-hover); }
-.faq-question {
-  width: 100%; text-align: left;
-  padding: 1.25rem 1.5rem;
-  font-family: var(--display); font-size: 1rem; font-weight: 700;
-  color: var(--text);
-  display: flex; justify-content: space-between;
-  align-items: center; gap: 1rem;
-  transition: background 0.3s;
-}
-.faq-question:hover { background: var(--bg-3); }
-.faq-chevron {
-  width: 24px; height: 24px; border-radius: 50%;
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.85rem; color: var(--accent); flex-shrink: 0;
-  transition: transform 0.3s var(--ease), background 0.3s;
-}
-.faq-item.open .faq-chevron {
-  transform: rotate(45deg); background: var(--accent-glow);
-}
-.faq-answer {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.5s var(--ease);
-}
-.faq-item.open .faq-answer { max-height: 600px; }
-.faq-answer-inner {
-  padding: 0 1.5rem 1.25rem;
-  color: var(--text-dim); font-size: 0.95rem; line-height: 1.75;
-}
-
-/* ── BLOG PREVIEW ── */
-.blog-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-}
-.blog-card {
-  background: var(--bg-2); border: 1px solid var(--border);
-  border-radius: 20px; overflow: hidden;
-  transition: all 0.4s var(--ease);
-}
-.blog-card:hover {
-  border-color: var(--border-hover); transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-}
-.blog-card-body { padding: 2rem; }
-.blog-card-tag {
-  font-family: var(--mono); font-size: 0.65rem;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--accent); margin-bottom: 0.75rem;
-}
-.blog-card h3 {
-  font-family: var(--display); font-size: 1.1rem;
-  font-weight: 700; margin-bottom: 0.75rem;
-  letter-spacing: -0.01em; line-height: 1.3;
-}
-.blog-card p {
-  color: var(--text-dim); font-size: 0.88rem; line-height: 1.65;
-}
-.blog-card-link {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-family: var(--display); font-weight: 700;
-  font-size: 0.8rem; color: var(--accent);
-  margin-top: 1rem; transition: gap 0.3s;
-}
-.blog-card:hover .blog-card-link { gap: 0.7rem; }
-.blog-all {
-  text-align: center; margin-top: 3rem;
-}
-
-/* ── CONTACT ── */
-.contact-layout {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-}
-.contact-info h3 {
-  font-family: var(--display); font-size: 2rem;
-  font-weight: 800; margin-bottom: 1.25rem;
-  letter-spacing: -0.02em;
-}
-.contact-info p {
-  color: var(--text-dim); line-height: 1.7; margin-bottom: 2rem;
-}
-.contact-links {
-  display: flex; flex-direction: column; gap: 0.75rem;
-}
-.contact-link-item {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: var(--bg-2); border: 1px solid var(--border);
-  border-radius: 14px; transition: all 0.3s var(--ease);
-}
-.contact-link-item:hover {
-  border-color: var(--border-hover); transform: translateX(4px);
-  background: var(--bg-3);
-}
-.contact-link-icon {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: var(--accent-glow);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-link-text { font-family: var(--display); font-weight: 600; font-size: 0.95rem; }
-.contact-link-sub { font-family: var(--mono); font-size: 0.72rem; color: var(--text-dim); }
-
-.contact-form { display: flex; flex-direction: column; gap: 1rem; }
-.form-row { display: flex; gap: 1rem; }
-.form-row > * { flex: 1; }
-.form-group label {
-  display: block; font-family: var(--mono); font-size: 0.7rem;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--text-dim); margin-bottom: 0.4rem;
-}
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%; padding: 0.85rem 1rem;
-  background: var(--bg-2); border: 1px solid var(--border);
-  border-radius: 12px; color: var(--text);
-  font-family: var(--serif); font-size: 0.95rem;
-  transition: all 0.3s var(--ease); outline: none;
-}
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-}
-.form-group textarea { min-height: 130px; resize: vertical; }
-.form-group select option { background: var(--bg-2); }
-.form-submit {
-  align-self: flex-start;
-  font-family: var(--display); font-weight: 700; font-size: 0.95rem;
-  padding: 1rem 2.5rem; background: var(--accent); color: var(--bg);
-  border-radius: 100px; transition: all 0.35s var(--ease);
-}
-.form-submit:hover {
-  background: #1affa0; transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 232, 123, 0.3);
-}
-.form-note {
-  font-family: var(--mono); font-size: 0.68rem;
-  color: var(--text-dimmer); line-height: 1.6; margin-top: 0.5rem;
-}
-
-/* ── FOOTER ── */
-.footer {
-  padding: 2.5rem 3rem;
-  border-top: 1px solid var(--border);
-}
-.footer-inner {
-  max-width: 1280px; margin: 0 auto;
-  display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-}
-.footer-copy { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dimmer); }
-.footer-links { display: flex; gap: 1.5rem; }
-.footer-links a {
-  font-family: var(--mono); font-size: 0.75rem;
-  color: var(--text-dim); transition: color 0.3s;
-}
-.footer-links a:hover { color: var(--accent); }
-
-/* ── ANIMATIONS ── */
-.reveal {
-  opacity: 0; transform: translateY(40px);
-  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .nav { padding: 1rem 1.5rem; }
-  .hero { padding: 7rem 1.5rem 3rem; }
-  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-photo-card { max-width: 340px; }
-  .section { padding: 5rem 1.5rem; }
-  .services-grid { grid-template-columns: 1fr; }
-  .framework-grid { grid-template-columns: 1fr 1fr; }
-  .story-layout { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .contact-layout { grid-template-columns: 1fr; }
-  .cta-banner { flex-direction: column; text-align: center; }
-}
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex; flex-direction: column;
-    position: absolute; top: 100%; left: 0; right: 0;
-    background: var(--bg-2); border-bottom: 1px solid var(--border);
-    padding: 1.25rem; gap: 0.25rem;
-  }
-  .nav-dropdown-menu { position: static; box-shadow: none; margin-top: 0; border: none; }
-  .nav-status { display: none; }
-  .mobile-toggle { display: block; }
-  .framework-grid { grid-template-columns: 1fr; }
-  .logos-row { gap: 1.5rem; }
-  .form-row { flex-direction: column; }
-  .cursor-dot, .cursor-ring { display: none; }
-  .footer-inner { flex-direction: column; text-align: center; }
-}
-</style>
+<meta name="description" content="Jorge Horst is an SEO Consultant & AI Automation Specialist based in Kraków, Poland. Strategic link-building, AI-powered analysis, multilingual SEO campaigns, and programmatic SEO strategies.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- ═══ NAV ═══ -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav-logo">jorgehorst<span class="dot"></span></a>
+  <a href="index.html" class="nav-logo">jorgehorst<span class="dot"></span></a>
   <div class="nav-links" id="navLinks">
-    <a href="#" class="nav-link active">Home</a>
-    <div class="nav-dropdown">
-      <a href="#services" class="nav-link">Services ▾</a>
-      <div class="nav-dropdown-menu">
-        <a href="#services">SEO Strategy</a>
-        <a href="#services">AI Automations</a>
-        <a href="#services">Local SEO</a>
-        <a href="#services">Link Building</a>
-      </div>
-    </div>
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="#services" class="nav-link">Services</a>
     <a href="#blog" class="nav-link">Blog</a>
     <a href="about.html" class="nav-link">About Me</a>
     <a href="#contact" class="nav-link">Contact</a>
@@ -792,436 +24,138 @@ body::after {
     <div class="nav-status"><span class="pulse"></span> Available</div>
     <a href="#contact" class="nav-cta">Book a Consultation</a>
   </div>
-  <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
-  <div class="hero-inner">
+  <div class="hero-bg-grid"></div><div class="hero-glow"></div><div class="hero-glow-2"></div>
+  <div class="hero-inner hero-split">
     <div>
-      <div class="hero-subtitle">Jorge Horst — SEO Consultant & AI Automation Specialist</div>
-      <h1>SEO consultant driven by <em>data, AI & strategic link-building</em></h1>
-      <p class="hero-text">
-        I build <strong>SEO & AI automation strategies</strong> for businesses, grounded in strategic link-building, data-driven content optimization, multilingual campaigns, and programmatic SEO. Creating tailored strategies that drive <strong>sustainable growth</strong> and higher search engine rankings.
-      </p>
-      <p class="hero-text" style="margin-top:-0.5rem">
-        Ready to take your SEO to the next level? Let's make it happen.
-      </p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-fill">Let's Talk →</a>
-        <a href="#services" class="btn btn-outline">View Services</a>
-      </div>
+      <div class="hero-eyebrow">Jorge Horst — SEO Consultant & AI Automation Specialist</div>
+      <h1><span class="line">SEO consultant driven</span><span class="line">by <em>data, AI &</em></span><span class="line"><em>strategic link-building</em></span></h1>
+      <p class="hero-desc">I build <strong>SEO & AI automation strategies</strong> for businesses, grounded in strategic link-building, data-driven content optimization, multilingual campaigns, and programmatic SEO. Creating tailored strategies that drive <strong>sustainable growth</strong>.</p>
+      <p class="hero-desc" style="margin-top:0.5rem">Ready to take your SEO to the next level? Let's make it happen.</p>
+      <div class="hero-actions"><a href="#contact" class="btn btn-fill">Let's Talk →</a><a href="#services" class="btn btn-outline">View Services</a></div>
     </div>
     <div class="hero-photo-card">
-      <div class="hero-photo">
-        <img src="jorge_horst.jpg" alt="Jorge Horst — SEO Consultant & AI Automation Specialist" style="width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div class="hero-photo-floating">
-        <div class="name">Jorge Horst</div>
-        <div class="role">SEO + AI Consultant</div>
-      </div>
+      <div class="hero-photo"><img src="jorge_horst.jpg" alt="Jorge Horst — SEO Consultant"></div>
+      <div class="hero-photo-floating"><div class="hpf-name">Jorge Horst</div><div class="hpf-role">SEO + AI Consultant</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ LOGO STRIP ═══ -->
-<div class="logos-strip reveal">
-  <div class="logos-inner">
-    <div class="logos-label">A selection of brands & projects I've worked with</div>
-    <div class="logos-row">
-      <span class="logo-item">ALK-Abelló</span>
-      <span class="logo-item">MediaGroup</span>
-      <span class="logo-item">Majorel / Google</span>
-      <span class="logo-item">Allergiecheck.de</span>
-      <span class="logo-item">Allesoverallergie.nl</span>
-      <span class="logo-item">Klarify.me</span>
-    </div>
-  </div>
-</div>
+<div class="logos-strip reveal"><div class="logos-inner">
+  <div class="logos-label">A selection of brands & projects I've worked with</div>
+  <div class="logos-row"><span class="logo-item">ALK-Abelló</span><span class="logo-item">MediaGroup</span><span class="logo-item">Majorel / Google</span></div>
+</div></div>
 
-<!-- ═══ STORY ═══ -->
 <section class="section" id="story">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">My Approach</span>
-      <h2 class="section-title">Each SEO story is <em>different</em></h2>
-    </div>
-
+    <div class="section-header reveal"><span class="section-eyebrow">My Approach</span><h2 class="section-title">Each SEO story is <em>different</em></h2></div>
     <div class="story-layout">
       <div class="story-text reveal">
         <p>Over the years I've realized that the general direction of SEO is clear: <strong>strategic link-building, AI-powered content analysis, and a data-driven approach</strong> are the ultimate drivers of sustainable organic growth.</p>
-        <p>My background spans <strong>pharmaceuticals, digital advertising, and agency-side SEO</strong> — each taught me something different about how search works across industries, languages, and markets. From managing Google Ads accounts at Majorel to developing multilingual SEO campaigns at ALK, I've built a framework that adapts to the specific needs of each business.</p>
-        <p>I combine deep technical SEO knowledge with <strong>AI automation tools</strong> to execute at scale — eliminating repetitive tasks and letting strategy drive the work, not manual labor.</p>
+        <p>My background spans <strong>pharmaceuticals, digital advertising, and agency-side SEO</strong> — each taught me something different about how search works across industries, languages, and markets.</p>
+        <p>I combine deep technical SEO knowledge with <strong>AI automation tools</strong> to execute at scale — eliminating repetitive tasks and letting strategy drive the work.</p>
         <a href="about.html" class="read-more">Read more about me →</a>
       </div>
       <div class="story-stats reveal">
-        <div class="story-stat">
-          <div class="story-stat-num" id="yearsCount" data-suffix="">0</div>
-          <div class="story-stat-label">Years in SEO</div>
-        </div>
-        <div class="story-stat">
-          <div class="story-stat-num" data-count="3">0</div>
-          <div class="story-stat-label">Companies</div>
-        </div>
-        <div class="story-stat">
-          <div class="story-stat-num" data-count="50" data-suffix="+">0</div>
-          <div class="story-stat-label">Projects</div>
-        </div>
-        <div class="story-stat">
-          <div class="story-stat-num" data-count="2">0</div>
-          <div class="story-stat-label">Languages</div>
-        </div>
+        <div class="story-stat"><div class="story-stat-num" id="yearsCount" data-suffix="">0</div><div class="story-stat-label">Years in SEO</div></div>
+        <div class="story-stat"><div class="story-stat-num" data-count="3">0</div><div class="story-stat-label">Companies</div></div>
+        <div class="story-stat"><div class="story-stat-num" data-count="50" data-suffix="+">0</div><div class="story-stat-label">Projects</div></div>
+        <div class="story-stat"><div class="story-stat-num" data-count="2">0</div><div class="story-stat-label">Languages</div></div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
 
-<!-- ═══ SERVICES ═══ -->
 <section class="section" id="services">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">Services</span>
-      <h2 class="section-title">SEO <em>Services</em></h2>
-      <p class="section-subtitle">A solid knowledge base, the right tools, and efficient AI-powered processes to offer you complete SEO assistance.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">💬</div>
-        <h3>SEO Consulting</h3>
-        <p>One-on-one consulting sessions to discuss your SEO challenges, audit results, strategy direction, or to verify a future SEO partner. Fresh perspective from a different angle can be crucial for your success.</p>
-        <a href="#contact" class="service-link">Book a session →</a>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">🔍</div>
-        <h3>SEO Audits</h3>
-        <p>Comprehensive SEO analysis covering technical health, content audit, keyword opportunity mapping, structured data validation, and competitor benchmarking — with prioritized, actionable recommendations.</p>
-        <a href="#contact" class="service-link">Request an audit →</a>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">🔗</div>
-        <h3>Link Building & Digital PR</h3>
-        <p>Strategic link acquisition through outreach campaigns, digital PR, high-value asset creation, and sustainable authority building tactics tailored to your niche and competitive landscape.</p>
-        <a href="#contact" class="service-link">Start building →</a>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">⚡</div>
-        <h3>AI Automations</h3>
-        <p>Custom AI-powered workflows using n8n and Make.com that automate content production, reporting, data enrichment, and multi-step SEO processes — so you can focus on strategy, not manual tasks.</p>
-        <a href="#contact" class="service-link">Automate now →</a>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">📍</div>
-        <h3>Local SEO</h3>
-        <p>Dominate your local market: Google Business Profile optimization, local citation building, review management strategy, and geo-targeted landing pages that drive foot traffic and calls.</p>
-        <a href="#contact" class="service-link">Go local →</a>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">🤖</div>
-        <h3>AI Search Optimization</h3>
-        <p>Future-proof your visibility: get cited by AI Overviews, ChatGPT, and Perplexity through entity optimization, GEO strategy, and content structured for AI comprehension and retrieval.</p>
-        <a href="#contact" class="service-link">Get visible →</a>
-      </div>
+    <div class="section-header reveal"><span class="section-eyebrow">Services</span><h2 class="section-title">SEO <em>Services</em></h2><p class="section-subtitle">A solid knowledge base, the right tools, and efficient AI-powered processes to offer you complete SEO assistance.</p></div>
+    <div class="services-grid services-grid-2col">
+      <div class="service-card reveal"><div class="service-icon-wrap">💬</div><h3>SEO Consulting</h3><p>One-on-one consulting sessions to discuss your SEO challenges, audit results, or strategy direction. Fresh perspective from a different angle can be crucial for your success.</p><a href="#contact" class="service-link">Book a session →</a></div>
+      <div class="service-card reveal"><div class="service-icon-wrap">🔍</div><h3>SEO Audits</h3><p>Comprehensive SEO analysis covering technical health, content audit, keyword opportunity mapping, structured data validation, and competitor benchmarking.</p><a href="#contact" class="service-link">Request an audit →</a></div>
+      <div class="service-card reveal"><div class="service-icon-wrap">🔗</div><h3>Link Building & Digital PR</h3><p>Strategic link acquisition through outreach campaigns, digital PR, high-value asset creation, and sustainable authority building tactics.</p><a href="#contact" class="service-link">Start building →</a></div>
+      <div class="service-card reveal"><div class="service-icon-wrap">⚡</div><h3>AI Automations</h3><p>Custom AI-powered workflows using n8n and Make.com that automate content production, reporting, data enrichment, and multi-step SEO processes.</p><a href="#contact" class="service-link">Automate now →</a></div>
+      <div class="service-card reveal"><div class="service-icon-wrap">📍</div><h3>Local SEO</h3><p>Dominate your local market: Google Business Profile optimization, local citation building, review management, and geo-targeted landing pages.</p><a href="#contact" class="service-link">Go local →</a></div>
+      <div class="service-card reveal"><div class="service-icon-wrap">🤖</div><h3>AI Search Optimization</h3><p>Future-proof your visibility: get cited by AI Overviews, ChatGPT, and Perplexity through entity optimization and GEO strategy.</p><a href="#contact" class="service-link">Get visible →</a></div>
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
 
-<!-- ═══ FRAMEWORK ═══ -->
 <section class="section" id="framework">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">Process</span>
-      <h2 class="section-title">SEO Framework <em>Stages</em></h2>
-      <p class="section-subtitle">My consulting framework is structured to deliver clear, measurable outcomes at every stage.</p>
-    </div>
-
+    <div class="section-header reveal"><span class="section-eyebrow">Process</span><h2 class="section-title">SEO Framework <em>Stages</em></h2></div>
     <div class="framework-grid">
-      <div class="framework-step reveal">
-        <div class="framework-step-num">01</div>
-        <div class="framework-step-label">Stage 1</div>
-        <h4>Discovery & Briefing</h4>
-        <p>An interview to identify your needs, discuss your brand, understand your market position, and define measurable goals for the engagement.</p>
-      </div>
-      <div class="framework-step reveal reveal-delay-1">
-        <div class="framework-step-num">02</div>
-        <div class="framework-step-label">Stage 2</div>
-        <h4>Comprehensive SEO Audit</h4>
-        <p>Technical SEO, content audit, link profile analysis, structured data validation, competitor benchmarking, and opportunity mapping — all in one report.</p>
-      </div>
-      <div class="framework-step reveal reveal-delay-2">
-        <div class="framework-step-num">03</div>
-        <div class="framework-step-label">Stage 3</div>
-        <h4>Strategy & Roadmap</h4>
-        <p>A prioritized action plan with clear timelines, content architecture, link-building strategy, and AI automation opportunities for your specific situation.</p>
-      </div>
-      <div class="framework-step reveal reveal-delay-3">
-        <div class="framework-step-num">04</div>
-        <div class="framework-step-label">Stage 4</div>
-        <h4>Execution & Iteration</h4>
-        <p>Recurring sprints covering content optimization, link acquisition, automation deployment, and monthly performance reviews with data-driven adjustments.</p>
-      </div>
+      <div class="framework-step reveal"><div class="fw-num">01</div><div class="fw-label">Stage 1</div><h4>Discovery & Briefing</h4><p>An interview to identify your needs, discuss your brand, and define measurable goals.</p></div>
+      <div class="framework-step reveal reveal-delay-1"><div class="fw-num">02</div><div class="fw-label">Stage 2</div><h4>Comprehensive SEO Audit</h4><p>Technical SEO, content audit, link profile analysis, structured data validation, and competitor benchmarking.</p></div>
+      <div class="framework-step reveal reveal-delay-2"><div class="fw-num">03</div><div class="fw-label">Stage 3</div><h4>Strategy & Roadmap</h4><p>Prioritized action plan with clear timelines, content architecture, and link-building strategy.</p></div>
+      <div class="framework-step reveal reveal-delay-3"><div class="fw-num">04</div><div class="fw-label">Stage 4</div><h4>Execution & Iteration</h4><p>Recurring sprints: content optimization, link acquisition, automation deployment, and monthly reviews.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CTA BANNER ═══ -->
-<section class="section" style="padding-top:0;">
-  <div class="section-inner">
-    <div class="cta-banner reveal">
-      <div>
-        <h3>Not sure if I can help?</h3>
-        <p>Feel free to reach out. Let's discuss your SEO situation — no commitment required.</p>
-      </div>
-      <a href="#contact" class="btn btn-fill">Let's Talk →</a>
-    </div>
-  </div>
-</section>
-
+<section class="section" style="padding-top:0"><div class="section-inner"><div class="cta-banner reveal"><div><h3>Not sure if I can help?</h3><p>Feel free to reach out. Let's discuss your SEO situation — no commitment required.</p></div><a href="#contact" class="btn btn-fill">Let's Talk →</a></div></div></section>
 <div class="section-divider"></div>
 
-<!-- ═══ TESTIMONIALS ═══ -->
 <section class="section testimonials-section" id="testimonials">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">Reviews</span>
-      <h2 class="section-title">What Clients <em>Say</em></h2>
-      <p class="section-subtitle">Reviews and recommendations from projects I've delivered.</p>
-    </div>
-
+    <div class="section-header reveal"><span class="section-eyebrow">Reviews</span><h2 class="section-title">What Clients <em>Say</em></h2></div>
     <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <p class="testimonial-quote">Jorge brought structure and data-driven clarity to our SEO efforts across multiple European markets. His combination of technical depth and AI automation skills produced measurable results quickly.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">CM</div>
-          <div>
-            <div class="testimonial-name">Client Name</div>
-            <div class="testimonial-role">Marketing Director — Placeholder</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <p class="testimonial-quote">The link-building strategy was outstanding — sustainable, well-researched, and clearly mapped to our business goals. It's hard to find someone who understands both the technical and strategic sides so well.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">AK</div>
-          <div>
-            <div class="testimonial-name">Client Name</div>
-            <div class="testimonial-role">Head of Digital — Placeholder</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <p class="testimonial-quote">The AI automation workflows Jorge built saved our content team hours every week. We finally have a scalable process that doesn't depend on manual effort at every step.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">RL</div>
-          <div>
-            <div class="testimonial-name">Client Name</div>
-            <div class="testimonial-role">Content Manager — Placeholder</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <p class="testimonial-quote">Working with Jorge felt collaborative from day one. He explained the strategy clearly, set expectations honestly, and delivered on every milestone. I'd recommend him without hesitation.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">FS</div>
-          <div>
-            <div class="testimonial-name">Client Name</div>
-            <div class="testimonial-role">Founder — Placeholder</div>
-          </div>
-        </div>
-      </div>
+      <div class="testimonial-card reveal"><p class="testimonial-quote">Jorge brought structure and data-driven clarity to our SEO efforts across multiple markets. His combination of technical depth and AI automation skills produced measurable results quickly.</p><div class="testimonial-author"><div class="testimonial-avatar">CM</div><div><div class="testimonial-name">Client Name</div><div class="testimonial-role">Marketing Director — Placeholder</div></div></div></div>
+      <div class="testimonial-card reveal"><p class="testimonial-quote">The link-building strategy was outstanding — sustainable, well-researched, and clearly mapped to our business goals. It's hard to find someone who understands both sides so well.</p><div class="testimonial-author"><div class="testimonial-avatar">AK</div><div><div class="testimonial-name">Client Name</div><div class="testimonial-role">Head of Digital — Placeholder</div></div></div></div>
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
 
-<!-- ═══ FAQ ═══ -->
 <section class="section" id="faq">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">FAQ</span>
-      <h2 class="section-title">SEO Consulting <em>FAQ</em></h2>
-      <p class="section-subtitle">Common questions about working together. If yours isn't listed, just reach out — I'm happy to clarify.</p>
-    </div>
-
+    <div class="section-header reveal"><span class="section-eyebrow">FAQ</span><h2 class="section-title">SEO Consulting <em>FAQ</em></h2></div>
     <div class="faq-list">
-      <div class="faq-item reveal" onclick="this.classList.toggle('open')">
-        <button class="faq-question">How much does SEO consulting cost? <span class="faq-chevron">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Consulting rates depend on the scope and complexity of the project. A single consulting session typically starts at a fixed hourly rate, while ongoing engagements are scoped and priced based on deliverables. Contact me with your situation and I'll provide a transparent quote.</div></div>
-      </div>
-      <div class="faq-item reveal" onclick="this.classList.toggle('open')">
-        <button class="faq-question">How many hours do I need? <span class="faq-chevron">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">One hour is usually enough to address common questions, get a second opinion on your SEO strategy, or discuss a specific challenge. For a comprehensive audit, strategy development, or ongoing support, a larger engagement is typical. Email me your goals and I'll suggest the right scope.</div></div>
-      </div>
-      <div class="faq-item reveal" onclick="this.classList.toggle('open')">
-        <button class="faq-question">What results can I expect? <span class="faq-chevron">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">SEO is a long-term investment. Depending on your starting point, you can expect improved technical health within weeks, content and link-building results within 3–6 months, and compounding traffic growth over 6–12 months. I set honest expectations upfront and report on progress monthly.</div></div>
-      </div>
-      <div class="faq-item reveal" onclick="this.classList.toggle('open')">
-        <button class="faq-question">Do you work with international / multilingual sites? <span class="faq-chevron">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes — this is one of my core strengths. I've managed multilingual SEO campaigns across European markets (Netherlands, Germany, UK, Canada, Denmark, Norway) and I speak both Spanish and English natively. I understand that SEO strategy must adapt to local search behaviors and language nuances.</div></div>
-      </div>
-      <div class="faq-item reveal" onclick="this.classList.toggle('open')">
-        <button class="faq-question">What tools and platforms do you use? <span class="faq-chevron">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">My primary toolkit includes Screaming Frog, Ahrefs, Semrush, Google Search Console, Google Analytics 4, and for automation I use n8n and Make.com. For AI-assisted content and analysis, I work with various LLM-based tools integrated into custom workflows.</div></div>
-      </div>
-      <div class="faq-item reveal" onclick="this.classList.toggle('open')">
-        <button class="faq-question">Can you help with AI automation beyond SEO? <span class="faq-chevron">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. While my automation work is rooted in SEO, the workflows I build (content pipelines, reporting dashboards, data enrichment, social media repurposing) apply broadly to marketing operations. If you have a repetitive process that could be automated, let's talk.</div></div>
-      </div>
+      <div class="faq-item reveal" onclick="this.classList.toggle('open')"><button class="faq-question">How much does SEO consulting cost? <span class="qa-icon">+</span></button><div class="qa-answer"><div class="qa-answer-inner">Rates depend on scope and complexity. Contact me with your situation and I'll provide a transparent quote.</div></div></div>
+      <div class="faq-item reveal" onclick="this.classList.toggle('open')"><button class="faq-question">How many hours do I need? <span class="qa-icon">+</span></button><div class="qa-answer"><div class="qa-answer-inner">One hour is usually enough for common questions or a second opinion. For audits and strategy, a larger engagement is typical.</div></div></div>
+      <div class="faq-item reveal" onclick="this.classList.toggle('open')"><button class="faq-question">What results can I expect? <span class="qa-icon">+</span></button><div class="qa-answer"><div class="qa-answer-inner">Improved technical health within weeks, content and link-building results within 3–6 months, and compounding traffic growth over 6–12 months.</div></div></div>
+      <div class="faq-item reveal" onclick="this.classList.toggle('open')"><button class="faq-question">Do you work with multilingual sites? <span class="qa-icon">+</span></button><div class="qa-answer"><div class="qa-answer-inner">Yes — I've managed multilingual SEO campaigns across European markets and speak both Spanish and English natively.</div></div></div>
+      <div class="faq-item reveal" onclick="this.classList.toggle('open')"><button class="faq-question">What tools do you use? <span class="qa-icon">+</span></button><div class="qa-answer"><div class="qa-answer-inner">Screaming Frog, Ahrefs, Semrush, Google Search Console, GA4, n8n, Make.com, and various LLM-based tools.</div></div></div>
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
 
-<!-- ═══ BLOG ═══ -->
 <section class="section" id="blog">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">Blog</span>
-      <h2 class="section-title">SEO <em>Insights</em></h2>
-    </div>
-
+    <div class="section-header reveal"><span class="section-eyebrow">Blog</span><h2 class="section-title">SEO <em>Insights</em></h2></div>
     <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-card-body">
-          <div class="blog-card-tag">SEO Strategy</div>
-          <h3>Why Link-Building Still Matters in the Age of AI Overviews</h3>
-          <p>AI is changing how search results look, but the fundamentals of authority haven't disappeared. Here's how strategic link-building adapts to the new landscape.</p>
-          <a href="#" class="blog-card-link">Read more →</a>
-        </div>
-      </div>
-      <div class="blog-card reveal reveal-delay-1">
-        <div class="blog-card-body">
-          <div class="blog-card-tag">AI Automation</div>
-          <h3>How I Use n8n to Automate 80% of My SEO Reporting</h3>
-          <p>A walkthrough of the automated reporting pipeline I built using n8n, GSC API, and AI-powered summarization — saving hours every month.</p>
-          <a href="#" class="blog-card-link">Read more →</a>
-        </div>
-      </div>
-      <div class="blog-card reveal reveal-delay-2">
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Technical SEO</div>
-          <h3>Multilingual SEO: Common Hreflang Mistakes That Kill Your Rankings</h3>
-          <p>After managing multi-market SEO campaigns, these are the hreflang implementation errors I see most often — and how to fix them.</p>
-          <a href="#" class="blog-card-link">Read more →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="blog-all">
-      <a href="#" class="btn btn-outline">Read all posts →</a>
+      <div class="blog-card reveal"><div class="blog-card-body"><div class="blog-card-tag">SEO Strategy</div><h3>Why Link-Building Still Matters in the Age of AI Overviews</h3><p>AI is changing search results, but authority fundamentals haven't disappeared. Here's how strategic link-building adapts.</p><a href="#" class="blog-card-link">Read more →</a></div></div>
+      <div class="blog-card reveal reveal-delay-1"><div class="blog-card-body"><div class="blog-card-tag">AI Automation</div><h3>How I Use n8n to Automate 80% of My SEO Reporting</h3><p>A walkthrough of my automated reporting pipeline using n8n, GSC API, and AI-powered summarization.</p><a href="#" class="blog-card-link">Read more →</a></div></div>
+      <div class="blog-card reveal reveal-delay-2"><div class="blog-card-body"><div class="blog-card-tag">Technical SEO</div><h3>Multilingual SEO: Common Hreflang Mistakes That Kill Rankings</h3><p>The hreflang implementation errors I see most often across multi-market campaigns — and how to fix them.</p><a href="#" class="blog-card-link">Read more →</a></div></div>
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
 
-<!-- ═══ CONTACT ═══ -->
 <section class="section" id="contact">
   <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">Contact</span>
-      <h2 class="section-title">Let's talk about <em>SEO</em></h2>
-    </div>
-
+    <div class="section-header reveal"><span class="section-eyebrow">Contact</span><h2 class="section-title">Let's talk about <em>SEO</em></h2></div>
     <div class="contact-layout">
       <div class="contact-info reveal">
         <h3>Ready to grow?</h3>
-        <p>Whether you need a full SEO strategy, a one-time audit, link-building support, or AI automation — fill in the form and I'll get back to you within 24 hours.</p>
-
+        <p>Whether you need SEO strategy, link-building, AI automation — fill in the form and I'll get back to you within 24 hours.</p>
         <div class="contact-links">
-          <a href="mailto:hi@jorgehorst.com" class="contact-link-item">
-            <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
-            </div>
-            <div>
-              <div class="contact-link-text">hi@jorgehorst.com</div>
-              <div class="contact-link-sub">Email — preferred</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/jorge-horst/" target="_blank" rel="noopener" class="contact-link-item">
-            <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </div>
-            <div>
-              <div class="contact-link-text">LinkedIn</div>
-              <div class="contact-link-sub">Connect & message</div>
-            </div>
-          </a>
-          <a href="https://x.com/Jorgehorst26" target="_blank" rel="noopener" class="contact-link-item">
-            <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M13.232 11.232L20 4"/></svg>
-            </div>
-            <div>
-              <div class="contact-link-text">X / Twitter</div>
-              <div class="contact-link-sub">Follow & DM</div>
-            </div>
-          </a>
-          <a href="https://www.facebook.com/jorge.horst/" target="_blank" rel="noopener" class="contact-link-item">
-            <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </div>
-            <div>
-              <div class="contact-link-text">Facebook</div>
-              <div class="contact-link-sub">Follow</div>
-            </div>
-          </a>
-          <div class="contact-link-item">
-            <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div class="contact-link-text">Kraków, Poland</div>
-              <div class="contact-link-sub">Central European Time</div>
-            </div>
-          </div>
+          <a href="mailto:hi@jorgehorst.com" class="contact-link-item"><div class="contact-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E87B" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg></div><div><div class="contact-link-text">hi@jorgehorst.com</div><div class="contact-link-sub">Email — preferred</div></div></a>
+          <a href="https://www.linkedin.com/in/jorge-horst/" target="_blank" rel="noopener" class="contact-link-item"><div class="contact-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E87B" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="contact-link-text">LinkedIn</div><div class="contact-link-sub">Connect & message</div></div></a>
+          <a href="https://x.com/Jorgehorst26" target="_blank" rel="noopener" class="contact-link-item"><div class="contact-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E87B" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M13.232 11.232L20 4"/></svg></div><div><div class="contact-link-text">X / Twitter</div><div class="contact-link-sub">Follow & DM</div></div></a>
+          <a href="https://www.facebook.com/jorge.horst/" target="_blank" rel="noopener" class="contact-link-item"><div class="contact-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E87B" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><div><div class="contact-link-text">Facebook</div><div class="contact-link-sub">Follow</div></div></a>
+          <div class="contact-link-item"><div class="contact-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E87B" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="contact-link-text">Kraków, Poland</div><div class="contact-link-sub">Central European Time</div></div></div>
         </div>
       </div>
-
-      <form class="contact-form reveal" onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent='Sent ✓'; this.querySelector('.form-submit').style.background='var(--accent-dark)';">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Name & Surname</label>
-            <input type="text" placeholder="Your full name" required>
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="you@company.com" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Choose Topic</label>
-          <select>
-            <option value="">Choose topic...</option>
-            <option>SEO Consulting</option>
-            <option>SEO Audit</option>
-            <option>Link Building</option>
-            <option>AI Automations</option>
-            <option>Local SEO</option>
-            <option>AI Search Optimization</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Tell me about your project, goals, and timeline..."></textarea>
-        </div>
+      <form class="contact-form reveal" onsubmit="event.preventDefault();this.querySelector('.form-submit').textContent='Sent ✓';this.querySelector('.form-submit').style.background='#00854A';">
+        <div class="form-row"><div class="form-group"><label>Name & Surname</label><input type="text" placeholder="Your full name" required></div><div class="form-group"><label>Email Address</label><input type="email" placeholder="you@company.com" required></div></div>
+        <div class="form-group"><label>Choose Topic</label><select><option value="">Choose topic...</option><option>SEO Consulting</option><option>SEO Audit</option><option>Link Building</option><option>AI Automations</option><option>Local SEO</option><option>AI Search Optimization</option><option>Other</option></select></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell me about your project..."></textarea></div>
         <button type="submit" class="form-submit">Send Message →</button>
         <p class="form-note">This offer is intended for business entities. Your data will be processed in accordance with the Privacy Policy.</p>
       </form>
@@ -1229,88 +163,8 @@ body::after {
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-copy">© 2026 Jorge Horst. All rights reserved. Kraków, Poland.</div>
-    <div class="footer-links">
-      <a href="#">Home</a>
-      <a href="#services">Services</a>
-      <a href="about.html">About</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-      <a href="#">Privacy</a>
-    </div>
-  </div>
-</footer>
+<footer class="footer"><div class="footer-inner"><div class="footer-copy">© 2026 Jorge Horst. All rights reserved. Kraków, Poland.</div><div class="footer-links"><a href="index.html">Home</a><a href="#services">Services</a><a href="about.html">About</a><a href="#blog">Blog</a><a href="#contact">Contact</a><a href="#">Privacy</a></div></div></footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ═══ CUSTOM CURSOR ═══
-const dot = document.getElementById('cursorDot');
-const ring = document.getElementById('cursorRing');
-let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX; mouseY = e.clientY;
-  dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
-});
-
-function animateRing() {
-  ringX += (mouseX - ringX) * 0.12;
-  ringY += (mouseY - ringY) * 0.12;
-  ring.style.transform = `translate(${ringX - 20}px, ${ringY - 20}px)`;
-  requestAnimationFrame(animateRing);
-}
-animateRing();
-
-document.querySelectorAll('a, button, .service-card, .blog-card, .testimonial-card, .faq-item, .story-stat, .framework-step, .logo-item').forEach(el => {
-  el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
-});
-
-// ═══ SERVICE CARD GLOW ═══
-document.querySelectorAll('.service-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
-    card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
-  });
-});
-
-// ═══ NAV SCROLL ═══
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-
-// ═══ SCROLL REVEAL ═══
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// ═══ DYNAMIC YEARS OF EXPERIENCE ═══
-const startYear = 2018;
-const yearsExp = new Date().getFullYear() - startYear;
-const yearsEl = document.getElementById('yearsCount');
-yearsEl.dataset.count = yearsExp;
-
-// ═══ COUNTER ANIMATION ═══
-const counterObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.dataset.count);
-      const suffix = el.dataset.suffix || '';
-      let current = 0;
-      const step = Math.max(1, Math.floor(target / 40));
-      const interval = setInterval(() => {
-        current += step;
-        if (current >= target) { current = target; clearInterval(interval); }
-        el.textContent = current + suffix;
-      }, 35);
-      counterObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(el => counterObserver.
+<script src="main.js"></script>
+</body>
+</html>
